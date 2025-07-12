@@ -8,7 +8,7 @@ const Banner: React.FC = () => {
       aria-labelledby="banner-title"
     >
       <img
-        src="/img/envios.png"
+        src={`${import.meta.env.BASE_URL}img/envios.png`}
         alt="Envíos Hound Express"
         className="banner__image"
       />

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
         {/* Agrupamos logo y título */}
         <div className="header__brand">
           <img
-            src="/img/logo-Hound_Express-bg-white.png"
+            src={`${import.meta.env.BASE_URL}img/logo-Hound_Express-bg-white.png`}
             alt="Logo Hound Express"
             className="header__logo"
           />

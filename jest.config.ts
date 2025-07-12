@@ -13,7 +13,7 @@ const config: Config = {
   testMatch: ["**/__tests__/**/*.test.ts?(x)"],
   globals: {
     "ts-jest": {
-      tsconfig: "tsconfig.jest.json"
+      tsconfig: "tsconfig.json" // 💥 ahora apunta al correcto
     }
   }
 };
