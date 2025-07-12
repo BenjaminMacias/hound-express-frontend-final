@@ -1,0 +1,126 @@
+@use "../styles/variables" as variables;
+@use "sass:color";
+
+.guide-list {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+
+    th,
+    td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: variables.$primary;
+      color: white;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: color.adjust(variables.$primary, $lightness: -5%);
+      }
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    font-size: 1rem;
+    color: variables.$gray-dark;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+}
+
+// Animación para mostrar mensaje suavemente
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .guide-list__table {
+    font-size: 0.6rem;
+    table-layout: fixed;
+    word-break: break-word;
+  }
+
+  .guide-list__table th,
+  .guide-list__table td {
+    padding: 0.2rem 0.3rem; 
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+  .guide-list__actions {
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      padding: 0.15rem 0.3rem;
+      font-size: 0.5rem;
+      width: 100%;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .guide-list__title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .guide-list__table {
+    font-size: 0.3rem;
+
+    th,
+    td {
+      padding: 0.3rem 0.4rem;
+      word-break: break-word; 
+      white-space: normal; 
+    }
+  }
+
+  .guide-list__title {
+    font-size: 1.25rem;
+  }
+
+  .guide-list__actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    button {
+      padding: 0.1rem 0.5rem;
+      font-size: 0.25rem;
+      width: 100%;
+    }
+  }
+}
+

@@ -1,0 +1,67 @@
+// Importación de módulos de estilos
+@use 'variables' as variables;
+@use 'header';
+@use 'banner';
+@use 'form';
+@use 'status';
+@use 'guide-list';
+@use 'modal';
+@use 'layout';
+
+// Ajustes globales para asegurar que body y #root ocupen el 100%
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: variables.$light-gray;
+  font-family: variables.$font-main;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Estilos generales del contenedor principal
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+  }
+}
+
+
+// Clase para accesibilidad: oculta visualmente pero mantiene accesible para lectores de pantalla
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

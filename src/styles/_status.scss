@@ -1,0 +1,44 @@
+@use "../styles/variables" as variables;
+
+.status-panel {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  &__card-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    flex: 1;
+    min-width: 150px;
+    background-color: variables.$white;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: variables.$border-radius;
+    box-shadow: variables.$box-shadow;
+    text-align: center;
+  }
+}
+
+/* Responsivo para móviles */
+@media screen and (max-width: 768px) {
+  .status-panel__card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .status-panel__card {
+    width: 80%;
+  }
+}

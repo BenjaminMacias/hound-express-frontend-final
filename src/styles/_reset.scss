@@ -1,0 +1,35 @@
+// _reset.scss
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: variables.$light-gray;
+    color: variables.$text-color;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
